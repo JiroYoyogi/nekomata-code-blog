@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+:root {
+  --color-base: #9effed;
+  --color-main: #fff;
+  --color-accent: #4ccab3;
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --max-w-content: 1080px;
+}
+
+body {
+  background-color: var(--color-base);
+  color: #333;
+  font-family: var(--font-sans);
+}
