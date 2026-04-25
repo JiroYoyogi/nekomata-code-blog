@@ -9,9 +9,6 @@ export default function Header() {
           NEKOMATA CODE ★️ 社内ブログ
         </Link>
       </h1>
-      <div className="flex items-center gap-4">
-        <p>代々木二郎さん</p>
-      </div>
     </header>
   );
 }

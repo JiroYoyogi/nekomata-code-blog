@@ -5,13 +5,5 @@ import Footer from '@/components/Footer';
 export default function ArticlePage() {
   const { id } = useParams();
 
-  return (
-    <>
-      <Header />
-
-      <p>記事：{id}</p>
-
-      <Footer />
-    </>
-  );
+  return <p>記事：{id}</p>;
 }

@@ -6,13 +6,5 @@ export default function TagPage() {
   const { tagName } = useParams();
   const decodedTagName = decodeURIComponent(tagName);
 
-  return (
-    <>
-      <Header />
-
-      <p>タグ：{decodedTagName}</p>
-
-      <Footer />
-    </>
-  );
+  return <p className="flex-1">タグ：{decodedTagName}</p>;
 }
