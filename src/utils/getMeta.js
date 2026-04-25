@@ -1,6 +1,8 @@
 export default function getSummary(page) {
   const props = page.properties || {};
 
+  const isPublic = props['公開']?.checkbox || false;
+
   const title =
     props['名前']?.title?.map((item) => item.plain_text).join('') || '';
 
@@ -28,6 +30,6 @@ export default function getSummary(page) {
     date: publishedAt,
     coverImageUrl: coverImageUrl ? coverImageUrl : '',
     defaultImage: '/default_01.png',
-    likeCount: 99,
+    isPublic,
   };
 }

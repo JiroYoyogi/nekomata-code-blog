@@ -165,6 +165,7 @@ setArticleList(articleSummaryList);
 - タグ一覧エリア追加
 - ローディング・エラー処理追加
 - 記事データパース関数を外に出す
+- 公開ステータスのチェック
 
 ```jsx
 import { useEffect, useState } from 'react';
@@ -207,9 +208,11 @@ export default function HomePage() {
 
         const data = await response.json();
 
-        const articleSummaryList = (data.results || []).map((page) => {
-          return getMeta(page);
-        });
+        const articleSummaryList = (data.results || [])
+          .map((page) => {
+            return getMeta(page);
+          })
+          .filter((page) => page.isPublic);
 
         const tags = new Set();
 
@@ -312,9 +315,11 @@ export default function TagPage() {
 
         const data = await response.json();
 
-        const articleSummaryList = (data.results || []).map((page) => {
-          return getMeta(page);
-        });
+        const articleSummaryList = (data.results || [])
+          .map((page) => {
+            return getMeta(page);
+          })
+          .filter((page) => page.isPublic);
 
         setArticleList(articleSummaryList);
       } catch (err) {
