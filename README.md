@@ -61,6 +61,14 @@ VITE_NOTION_API_KEY=ntn_1234567890
 VITE_NOTION_DATA_SOURCE_ID=1234567890
 ```
 
+### VSCodeの拡張機能について
+
+必要に応じてインストール
+
+- Prettier - Code formatter
+- Tailwind CSS IntelliSense
+- ESLint
+
 ### 初期次状態を確認
 
 （口頭でざっと説明）
