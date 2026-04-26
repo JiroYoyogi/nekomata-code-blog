@@ -244,7 +244,7 @@ export default function HomePage() {
     <>
       {/* タグ一覧 */}
       <section className="mt-12 px-6">
-        <ul className="max-w-(--max-w-content) mx-auto flex gap-3">
+        <ul className="max-w-(--max-w-content) mx-auto flex flex-wrap gap-3">
           {tagList.map((tag, key) => (
             <Tag key={key} variant="list" label={tag} />
           ))}
