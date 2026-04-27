@@ -14,7 +14,7 @@
 
 https://second-plutonium-d8a.notion.site/34ed1056141180918c7aca46980dba9f?v=34ed1056141180708545000ca5986863
 
-（エンタープライズ版などを使っていて複製が出来ない場合）
+（複製が出来ない場合）
 
 - リポジトリをZIPダウンロード
 - notion/NEKOMATA_CODE_BLOG.csvをインポート（一覧作成）
