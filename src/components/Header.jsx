@@ -6,7 +6,7 @@ export default function Header() {
       <h1>
         <Link to="/" className="flex items-center gap-2 font-bold">
           <img src="/logo.png" alt="" className="w-10" />
-          NEKOMATA CODE ★️ 社内ブログ
+          NEKOMATA CODE BLOG
         </Link>
       </h1>
     </header>

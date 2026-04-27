@@ -39,7 +39,7 @@ https://second-plutonium-d8a.notion.site/34ed1056141180918c7aca46980dba9f?v=34ed
 
 ```
 1. 「アクセス権限を編集」
-2. 「NEKOMATA CODE社内ブログ」を選択して「保存する」
+2. 「NEKOMATA CODE BLOG」を選択して「保存する」
 ```
 
 - アクセストークンをメモ
