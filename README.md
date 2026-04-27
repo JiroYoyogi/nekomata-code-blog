@@ -14,6 +14,12 @@
 
 https://second-plutonium-d8a.notion.site/34ed1056141180918c7aca46980dba9f?v=34ed1056141180708545000ca5986863
 
+（エンタープライズ版などを使っていて複製が出来ない場合）
+
+- リポジトリをZIPダウンロード
+- notion/NEKOMATA_CODE_BLOG.csvをインポート（一覧作成）
+- 上記リンク先から各ページのマークダウンをコピペ
+
 ### Notion APIを使う設定
 
 #### 開発者ポータルへ移動
@@ -155,6 +161,63 @@ export default defineConfig({
 ```
 
 ### データを整形
+
+- データの形式
+
+```json
+// 必要な部分のみ抽出
+{
+  "results": [
+    {
+      "id": "34ed1056-1411-809b-9807-d87d53fd9406",
+      "cover": null,
+      "properties": {
+        "タグ": {
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "name": "チーム"
+            },
+            {
+              "name": "福利厚生"
+            }
+          ]
+        },
+        "ライター": {
+          "type": "select",
+          "select": {
+            "name": "日暮里 舞"
+          }
+        },
+        "公開": {
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "公開日": {
+          "type": "date",
+          "date": {
+            "start": "2026-04-25"
+          }
+        },
+        "名前": {
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "plain_text": "開発効率アップ！デュアルモニター購入補助制度の活用事例"
+            }
+          ]
+        }
+      }
+    },
+    {
+      ~ 省略 ~
+    }
+  ]
+}
+```
+
+- HomePage.jsx
 
 ```js
 const data = await response.json();
