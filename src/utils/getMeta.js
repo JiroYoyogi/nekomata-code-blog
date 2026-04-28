@@ -1,4 +1,4 @@
-export default function getSummary(page) {
+export default function getMeta(page) {
   const props = page.properties || {};
 
   const isPublic = props['公開']?.checkbox || false;
