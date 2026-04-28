@@ -651,6 +651,7 @@ const pageBlocksRes = await fetch(`/notion/v1/blocks/${id}/children`, {
 });
 
 const pageBlocks = await pageBlocksRes.json();
+console.log(pageBlocks);
 ```
 
 #### 記事データの形式
