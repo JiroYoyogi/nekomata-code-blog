@@ -550,6 +550,7 @@ import { useParams } from 'react-router-dom';
 import formatDate from '@/utils/formatDate';
 import Tag from '@/components/Tag';
 import getMeta from '@/utils/getMeta';
+import blocksToMarkdown from '@/utils/blocksToMarkdown';
 
 export default function ArticlePage() {
   const { id } = useParams();
@@ -642,14 +643,14 @@ B. Notionの記事Block → HTML
 #### 記事データ取得処理を復活
 
 ```jsx
-const blocksRes = await fetch(`/notion/v1/blocks/${id}/children`, {
+const pageBlocksRes = await fetch(`/notion/v1/blocks/${id}/children`, {
   headers: {
     Authorization: `Bearer ${import.meta.env.VITE_NOTION_API_KEY}`,
     'Notion-Version': '2022-06-28',
   },
 });
 
-const blocksData = await blocksRes.json();
+const pageBlocks = await pageBlocksRes.json();
 ```
 
 #### 記事データの形式
@@ -700,6 +701,13 @@ console.log(markdown);
 
 ```
 npm i marked isomorphic-dompurify
+```
+
+ライブラリの読み込み
+
+```jsx
+import DOMPurify from 'isomorphic-dompurify';
+import { marked } from 'marked';
 ```
 
 HTMLに変換する
