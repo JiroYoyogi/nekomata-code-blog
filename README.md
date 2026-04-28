@@ -222,7 +222,7 @@ export default defineConfig({
 ```js
 const data = await response.json();
 
-const articleSummaryList = (data.results || []).map((page) => {
+const articleMetaList = (data.results || []).map((page) => {
   const props = page.properties || {};
 
   const title =
@@ -255,7 +255,7 @@ const articleSummaryList = (data.results || []).map((page) => {
   };
 });
 
-console.log(articleSummaryList);
+console.log(articleMetaList);
 ```
 
 ### タグ一覧を作成
@@ -263,7 +263,7 @@ console.log(articleSummaryList);
 ```js
 const tags = new Set();
 
-articleSummaryList.forEach((article) => {
+articleMetaList.forEach((article) => {
   article.tags.forEach((tag) => {
     tags.add(tag);
   });
@@ -284,7 +284,7 @@ const [tagList, setTagList] = useState([]);
 
 ```jsx
 setTagList([...tags]);
-setArticleList(articleSummaryList);
+setArticleList(articleMetaList);
 ```
 
 ### 調整（完成コード）
@@ -335,7 +335,7 @@ export default function HomePage() {
 
         const data = await response.json();
 
-        const articleSummaryList = (data.results || [])
+        const articleMetaList = (data.results || [])
           .map((page) => {
             return getMeta(page);
           })
@@ -343,14 +343,14 @@ export default function HomePage() {
 
         const tags = new Set();
 
-        articleSummaryList.forEach((article) => {
+        articleMetaList.forEach((article) => {
           article.tags.forEach((tag) => {
             tags.add(tag);
           });
         });
 
         setTagList([...tags]);
-        setArticleList(articleSummaryList);
+        setArticleList(articleMetaList);
       } catch (err) {
         setError(err.message || '取得に失敗しました');
       }
@@ -442,13 +442,13 @@ export default function TagPage() {
 
         const data = await response.json();
 
-        const articleSummaryList = (data.results || [])
+        const articleMetaList = (data.results || [])
           .map((page) => {
             return getMeta(page);
           })
           .filter((page) => page.isPublic);
 
-        setArticleList(articleSummaryList);
+        setArticleList(articleMetaList);
       } catch (err) {
         setError(err.message || '取得に失敗しました');
       } // try
