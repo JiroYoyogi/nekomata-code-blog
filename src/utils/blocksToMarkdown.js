@@ -11,9 +11,11 @@ export default function blocksToMarkdown(blocks = [], listLevel = 0) {
 
     switch (type) {
       case 'heading_1':
+        // html += `<h1>${getBlockTextMarkdown(block)}</h1>`
         md += `# ${getBlockTextMarkdown(block)}\n\n`;
         break;
       case 'heading_2':
+        // html += `<h2>${getBlockTextMarkdown(block)}</h2>`
         md += `## ${getBlockTextMarkdown(block)}\n\n`;
         break;
       case 'heading_3':
